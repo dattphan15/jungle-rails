@@ -1,6 +1,7 @@
 class CartsController < ApplicationController
 
   def show
+    # raise @products.inspect
   end
 
   def add_item
