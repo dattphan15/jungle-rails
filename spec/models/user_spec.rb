@@ -52,10 +52,8 @@ RSpec.describe User, type: :model do
         :password_confirmation => "123456" 
       )
 
-      user = User.authenticate_with_credentials('  KEVIN@hotmail.com', '123456')
+      user = User.authenticate_with_credentials('   KEVIN@hotmail.com', '123456')
       expect(user).to be_an_instance_of(User)
-      # expect(@user).to_not be_valid
-      # expect(@user.errors.full_messages).to include "Password is too short (minimum is 6 characters)"
     end
   end
 
