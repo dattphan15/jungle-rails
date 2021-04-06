@@ -33,7 +33,7 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by_email(params[:email])
-    if user && user.authenticate_with_credentials(params[:email], params[:password])
+    if user = User.authenticate_with_credentials(params[:email], params[:password])
       # success logic, log them in
       # logged in when they navigate around our website.
       session[:user_id] = user.id
