@@ -45,6 +45,7 @@ RSpec.describe User, type: :model do
 
   describe '.authenticate_with_credentials' do
     it 'returns an instance of the user' do
+<<<<<<< HEAD
       @user = User.new(
         :name => "Kevin", 
         :email => "kevin@hotmail.com", 
@@ -54,6 +55,17 @@ RSpec.describe User, type: :model do
       expect(@user).to be_an_instance_of(User)
       expect(@user).to_not be_valid
       expect(@user).to eq(@user.authenticate("kevin@hotmail.com"))
+=======
+      @user1 = User.create(
+        :name => "Kevin", 
+        :email => "kevin@hotmail.com", 
+        :password => "123456", 
+        :password_confirmation => "123456" 
+      )
+
+      user = User.authenticate_with_credentials('   KEVIN@hotmail.com', '123456')
+      expect(user).to be_an_instance_of(User)
+>>>>>>> feature/user-specs
     end
   end
 

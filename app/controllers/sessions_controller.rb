@@ -3,34 +3,6 @@ class SessionsController < ApplicationController
   def new
   end
 
-  # def create
-  #   user = User.find_by_email(params[:email])
-  #   # If the user exists AND the password entered is correct.
-  #   if user && user.authenticate(params[:password])
-  #     # Save the user id inside the browser cookie. This is how we keep the user 
-  #     # logged in when they navigate around our website.
-  #     session[:user_id] = user.id
-  #     redirect_to '/'
-  #   else
-  #   # If user's login doesn't work, send them back to the login form.
-  #     redirect_to '/login'
-  #   end
-  # end
-
-  # def create
-  #   user = User.find_by_email(params[:email])
-  #   # If the user exists AND the password entered is correct.
-  #   if user && user.authenticate(params[:password])
-  #     # Save the user id inside the browser cookie. This is how we keep the user 
-  #     # logged in when they navigate around our website.
-  #     session[:user_id] = user.id
-  #     redirect_to '/'
-  #   else
-  #   # If user's login doesn't work, send them back to the login form.
-  #     redirect_to '/login'
-  #   end
-  # end
-
   def create
     user = User.find_by_email(params[:email])
     if user = User.authenticate_with_credentials(params[:email], params[:password])
@@ -40,8 +12,12 @@ class SessionsController < ApplicationController
       redirect_to '/', notice: "Logged in!"
     else
       # failure, render login form
+<<<<<<< HEAD
       # If user's login doesn't work, send them back to the login form.
       flash.now[:alert] = "Email or password is invalid"
+=======
+      flash.alert = "Wrong email or password"
+>>>>>>> feature/user-specs
       redirect_to '/login'
     end
   end
@@ -50,10 +26,5 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     redirect_to '/login'
   end
-
-  # private
-  # def cred_params
-  #   params.require(:user).permit(:name, :email, :password, :password_confirmation)
-  # end
 
 end
