@@ -45,15 +45,15 @@ RSpec.describe User, type: :model do
 
   describe '.authenticate_with_credentials' do
     it 'returns an instance of the user' do
-      @user = User.create(
+      @user = User.new(
         :name => "Kevin", 
-        :email => "  kevin@hotmail.com", 
+        :email => "kevin@hotmail.com", 
         :password => "12345", 
         :password_confirmation => "12345" 
       )
       expect(@user).to be_an_instance_of(User)
       expect(@user).to_not be_valid
-      # expect(@user.errors.full_messages).to include "Password is too short (minimum is 6 characters)"
+      expect(@user).to eq(@user.authenticate("kevin@hotmail.com"))
     end
   end
 
