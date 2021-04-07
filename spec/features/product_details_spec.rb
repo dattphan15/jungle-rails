@@ -33,13 +33,15 @@ RSpec.feature "Visitor navigates to home page and clicks on product to see produ
     scenario "They see see product details after clicking on product from home page" do
       # ACT
       visit root_path
-      find(:xpath, '/html/body/main/section/div/article[1]/header/a/h4').click
+      find(:xpath, '/html/body/main/section/div/article[1]/footer/a').click
       
       # DEBUG / VERIFY
       save_screenshot
   
       # since each _product partial renders an article with class product, we are expecting to find at least one on the page.
       expect(page).to have_css 'article.product-detail'
+      save_screenshot
+
     end
 
 
