@@ -23,7 +23,7 @@ A mini e-commerce application built with Rails 4.2 for purposes of teaching Rail
 !["Screenshot of Admin Products Page"](https://github.com/dattphan15/jungle-rails/blob/master/docs/06-jungle-admin-products.png)
 
 #### About
-!["Screenshot of About"](https://github.com/dattphan15/jungle-rails/blob/master/docs/07-jungle-admin-products.png)
+!["Screenshot of About"](https://github.com/dattphan15/jungle-rails/blob/master/docs/07-jungle-about.png)
 
 
 ## Additional Steps for Apple M1 Machines
