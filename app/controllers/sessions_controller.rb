@@ -12,12 +12,7 @@ class SessionsController < ApplicationController
       redirect_to '/', notice: "Logged in!"
     else
       # failure, render login form
-<<<<<<< HEAD
-      # If user's login doesn't work, send them back to the login form.
-      flash.now[:alert] = "Email or password is invalid"
-=======
       flash.alert = "Wrong email or password"
->>>>>>> feature/user-specs
       redirect_to '/login'
     end
   end
